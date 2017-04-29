@@ -1,0 +1,34 @@
+
+package com.fpt.nhatnk.pms.controller;
+import com.fpt.nhatnk.pms.entity.Product;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ *
+ * @author Muhammad Hammad
+ */
+public class ProductManager {
+private final List<Product> listOfProduct;
+public ProductManager()
+{
+    this.listOfProduct = new ArrayList<>(); 
+
+   }
+public int addProduct(Product p)
+{
+    this.listOfProduct.add(p);
+    return count();
+  }
+public int count()
+  {
+      return this.listOfProduct.size();
+  }
+public Product getproduct(int index)
+{
+    if (index <0 || index >=count()) {
+ return null;       
+    }
+    return this.listOfProduct.get(index);
+  }
+}
+
